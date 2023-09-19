@@ -28,7 +28,6 @@ app.get("/", async (req, res) => {
     } 
 }); 
 
-
 app.get("/book/:id", async (req, res) => { 
     try { 
         const response = await axios.get(base_url + '/books/' + req.params.id); 
@@ -39,15 +38,13 @@ app.get("/book/:id", async (req, res) => {
     } 
 });
 
-
 app.get("/create", (req, res) => { 
     res.render("create"); 
 }); 
 
-
 app.post("/create", async (req, res) => { 
     try { 
-        const data = { title: req.body. title, author: req.body.author }; 
+        const data = { title: req.body.title, author: req.body.author }; 
         await axios.post (base_url + '/books', data); 
         res.redirect("/"); 
     } catch (err) { 
@@ -55,7 +52,6 @@ app.post("/create", async (req, res) => {
         res.status(500).send('Error'); 
     } 
 }); 
-
 
 app.get("/update/:id", async (req, res) => { 
     try { 
@@ -67,7 +63,6 @@ app.get("/update/:id", async (req, res) => {
             res.status(500).send('Error'); 
         } 
     });
-
 
 app.post("/update/:id", async (req, res) => { 
     try { 
@@ -91,7 +86,6 @@ app.get("/delete/:id", async (req, res) => {
     } 
 }); 
 
-
-app.listen(5500, () => { 
-            console.log('Server started on port 5500'); 
+app.listen(80, () => { 
+            console.log('Server started on port 80'); 
             });
