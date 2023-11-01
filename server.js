@@ -119,7 +119,7 @@ app.get("/team/:id", async (req, res) => {
 });
 
 app.get("/createteam", (req, res) => { 
-  res.render("createTeam"); 
+  res.render("createteam"); 
 }); 
 
 app.post("/createteam", async (req, res) => { 
