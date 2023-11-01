@@ -9,10 +9,11 @@ var bodyParser = require('body-parser');
 
 // Base URL for the API 
 //const base_url = "https://api.example.com"; 
-//const base_url = "http://10.104.11.44"; //run on ruk.com
-//const base_url = "http://localhost:3000"; // localhost
-const base_url = "http://node50259-wanprasert.proen.app.ruk-com.cloud";
 
+//const base_url = "http://10.104.9.171"; //run on ruk.com
+// const base_url = "http://localhost:3000"; // localhost
+const base_url = "http://node50259-wanprasert.proen.app.ruk-com.cloud";
+//a
 // Set the template engine 
 //app.set("views", path.join(__dirname, "public/views"));
 app.set('view engine', 'ejs'); 
@@ -185,107 +186,28 @@ app.get("/player/:id", async (req, res) => {
     } 
   });
   
-// app.get("/createscore", (req, res) => { 
-//   res.render("createscore"); 
-// }); 
-// app.post("/createscore", async (req, res) => { 
-//   try { 
-//       const data = { playerId: req.body.playerId, teamId: req.body.teamId,score: req.body.score  }; 
-//       await axios.post (base_url + '/scores', data); 
-//       res.redirect("/"); 
-//   } catch (err) { 
-//       console.error(err); 
-//       res.status(500).send('Error'); 
-//   } 
-// }); 
+app.get("/createscore", (req, res) => { 
+  res.render("createscore"); 
+}); 
+app.post("/createscore", async (req, res) => { 
+  try { 
+      const data = { playerId: req.body.playerId, teamId: req.body.teamId,score: req.body.score  }; 
+      await axios.post (base_url + '/scores', data); 
+      res.redirect("/"); 
+  } catch (err) { 
+      console.error(err); 
+      res.status(500).send('Error'); 
+  } 
+}); 
 
 
 
 
-// app.get('/createscore', (req, res) => {
-//     res.render('createscore', { players });
-//   });
+app.get('/createscore', (req, res) => {
+    res.render('createscore', { players });
+  });
   
-app.get("/scores",async (req,res) => {
-    try{
-        const response = await axios.get(base_url + '/scores');
-        const response2 = await axios.get(base_url + '/players');
-        const response3 = await axios.get(base_url + '/teams');
-        res.render("scores",{scores1:response.data ,scores2:response2.data , scores3:response3.data  });
-        //dsdsd
-
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Error');
-    }
-});
-
-
-app.get("/scores/:id", async(req,res) => {
-    try{
-        const response = await axios.get(base_url + '/scores/' + req.params.id);
-        const response2 = await axios.get(base_url + '/players');
-        const response3 = await axios.get(base_url + '/teams');
-        res.render("score",{score:response.data  ,score2:response2.data , score3:response3.data});
-        
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Error');
-    }
-});
-
-
-app.get("/createscore", (req, res) => {
-    res.render("createscore"); });
-    
-app.post("/createscore",async (req,res) =>{
-    try{
-        const data = {player_id: req.body.player_id, team_id: req.body.team_id};
-        
-        await axios.post(base_url + '/scores',data);
-        res.redirect("/scores/");
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Error');
-    }
-});
-
-
-app.get("/updatescore/:id" , async (req,res) => {
-    try {
-        const response = await axios.get(base_url + '/scores/' + req.params.id);
-        const response2 = await axios.get(base_url + '/players/');
-        const response3 = await axios.get(base_url + '/teams/');
-        res.render("updatescore", {score: response.data , alldata_players : response2.data , alldata_teams : response3.data});
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Error');
-    }
-});
-
-app.post ("/updatescore/:id" , async (req,res) => {
-    try {
-        const data = { player_id: req.body.player_id, team_id: req.body.team_id};
-
-        console.log( req.body.team_id)
-        await axios.put(base_url + '/scores/' + req.params.id, data);
-        res.redirect("/scores");
-    }catch (err) {
-        console.error(err);
-        res.status(500).send('Error');
-    }
-});
-
-
-app.get("/scores/delete/:id" , async (req,res) => {
-    try {
-        await axios.delete(base_url + '/scores/' + req.params.id);
-            res.redirect("/scores/");
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Error');
-    }
-});
+ 
   
 
 

@@ -9,12 +9,10 @@
     <body> 
         <h1>บันทึกข้อมูลการทำประตู</h1> 
         <form method="post" action="/createscore"> 
-            <select name="player">
-                <% players.forEach(player => { %>
-                  <option value="<%= player.id %>"><%= player.name %></option>
-                <% }); %>
-              </select>
             
+          <label for="player_id">ชื่อนักกีฬา :</label> 
+          <input type="text" id="player_id" name="player_id"> 
+          <br>
             <label for="team_id">ชื่อทีม :</label> 
             <input type="text" id="team_id" name="team_id"> 
             <br>

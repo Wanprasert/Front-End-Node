@@ -1,0 +1,23 @@
+<!--update.ejs --> 
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>แก้ไข้ข้อมูลทีม</title> 
+        <link rel="stylesheet" href="../css/style.css"/>
+    </head> 
+    <body> 
+        <h1>แก้ไข้ข้อมูลทีม</h1> 
+        <form method="post" action="/updatescore/<%= score.id %>"> 
+            <label for="player_id">นักกีฬา:</label> 
+            <input type="text" id="player_id" name="player_id" value="<%= score.player_id %>"> 
+            <br> 
+            <label for="team_id">ทีม :</label> 
+            <input type="text" id="team_id" name="team_id" value="<%= score.team_id %>"> 
+            <br> 
+            <input type="submit" value="บันทึกการแก้ไขข้อมูลการทำประตู"> 
+        </form> 
+        <!-- <a href="/team/<%= team. id %>">View</a>  -->
+        <a href="/deletescore/<%= score. id %>">ลบข้อมูล</a> 
+        <a href="/scores">ย้อนกลับ</a> 
+    </body> 
+    </html>
