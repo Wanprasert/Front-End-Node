@@ -10,7 +10,8 @@ var bodyParser = require('body-parser');
 // Base URL for the API 
 //const base_url = "https://api.example.com"; 
 //const base_url = "http://10.104.11.44"; //run on ruk.com
-const base_url = "http://localhost:3000"; // localhost
+const base_url = "http://10.104.13.206"; //run on ruk.com
+//const base_url = "http://localhost:3000"; // localhost
 
 // Set the template engine 
 //app.set("views", path.join(__dirname, "public/views"));
@@ -89,10 +90,10 @@ app.get("/delete/:id", async (req, res) => {
     } 
 }); 
 
-// app.listen(8080, () => { 
-//             console.log('Server started on port 8080'); 
-//             }); //ruk.com
+app.listen(8080, () => { 
+            console.log('Server started on port 8080'); 
+            }); //ruk.com
 
-app.listen(5500, () => { 
-                console.log('Server started on port 5500'); 
-                }); // localhost
+// app.listen(5500, () => { 
+//                 console.log('Server started on port 5500'); 
+//                 }); // localhost
