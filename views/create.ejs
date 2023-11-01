@@ -2,20 +2,22 @@
 <!DOCTYPE html> 
 <html> 
     <head> 
-        <title>Create Book</title> 
+        <title>เพิ่มนักกีฬา</title> 
         <link rel="stylesheet" href="../css/style.css"/>
     </head> 
     <body> 
-        <h1>Create Book</h1> 
+        <h1>เพิ่มรายชื่อนักกีฬา</h1> 
         <form method="post" action="/create"> 
-            <label for="title">Title:</label> 
-            <input type="text" id="title" name="title"> 
+            <label for="name">ชื่อนักกีฬา :</label> 
+            <input type="text" id="name" name="name"> 
             <br> 
-            <label for="author">Author:</label> 
-            <input type="text" id="author" name="author"> 
-            <br> 
-            <input type="submit" value="create"> 
+            <label for="number">หมายเลขนักกีฬา :</label> 
+            <input type="text" id="number" name="number"> 
+            <br>
+            <input type="submit" value="เพิ่มรายชื่อนักกีฬา"> 
         </form> 
-        <a href="/">Back to List</a> 
+        <div class="link-center">
+            <a href="/players">ย้อนกลับ</a>
+          </div>
     </body> 
     </html>

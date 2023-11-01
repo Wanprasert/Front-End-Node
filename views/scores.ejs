@@ -1,0 +1,39 @@
+<!-- books.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>หน้าแรก</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <h1>ตารางข้อมูลผู้ทำประตู</h1>
+  <div class="link-center">
+    <a href="/createscore">บันทึกผู้ทำประตู</a>
+    <a href="/teams">ดูรายชื่อทีม</a>
+    <a href="/players">ดูรายชื่อนักกีฬา</a>
+  </div>
+  <table class="football-table">
+    <tr>
+      <th>ลำดับ</th>
+      <th>ชื่อนักกีฬา</th>
+      <th>สังกัดทีม</th>
+      <th>จำนวนการทำประตู</th>
+      <th>ดำเนินการ</th>
+    </tr>
+    <% for(var i=0; i < scores.length; i++) { %>
+    <tr>
+      <td><%= scores[i].player_id %></td>
+      <td><%= scores[i].team_id %></td>
+      <td><%= scores[i].score %></td>
+    
+      <td>
+        <a href="/score/<%= scores[i].id %>">View</a>
+        <a href="/update/<%= scores[i].id %>">Edit</a>
+        <a href="/delete/<%= scores[i].id %>">Delete</a>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+  
+</body>
+</html>

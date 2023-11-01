@@ -1,0 +1,20 @@
+<!--update.ejs --> 
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>แก้ไข้ข้อมูลทีม</title> 
+        <link rel="stylesheet" href="../css/style.css"/>
+    </head> 
+    <body> 
+        <h1>แก้ไข้ข้อมูลทีม</h1> 
+        <form method="post" action="/updateteam/<%= team.team_id %>"> 
+            <label for="team_name">ชื่อทีม :</label> 
+            <input type="text" id="team_name" name="team_name" value="<%= team.team_name %>"> 
+            <br> 
+            <input type="submit" value="บันทึกการแก้ไขข้อมูลทีม"> 
+        </form> 
+        <!-- <a href="/team/<%= team. id %>">View</a>  -->
+        <a href="/deleteteam/<%= team. team_id %>">ลบข้อมูล</a> 
+        <a href="/teams">ย้อนกลับ</a> 
+    </body> 
+    </html>

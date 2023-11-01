@@ -25,7 +25,7 @@ body {
   }
   
   th {
-    background-color: #2C3E50;
+    background-color: #768f56;
     color: white;
     font-weight: 600;
     text-transform: uppercase;
@@ -39,7 +39,7 @@ body {
 form {
     width: 50%;
     margin: auto;
-    border: 2px solid #2C3E50;
+    border: 2px solid #768f56;
     padding: 20px;
     border-radius: 5px;
   }
@@ -60,7 +60,7 @@ form {
   }
   
   input[type="submit"] {
-    background-color: #2C3E50;
+    background-color: #768f56;
     color: white;
     border: none;
     padding: 10px 16px;
@@ -103,19 +103,20 @@ form {
   }
   
   .link-center a:hover {
-    border-bottom-color: #2C3E50;
+    border-bottom-color: #768f56;
   }
 
 /* Style the table */
-.book-table {
+.football-table {
     border-collapse: collapse;
     width: 75%;
     margin: 0 auto; /* center the table */
     margin-bottom: 20px;
-    border-bottom: 2px solid #2C3E50;
+    border-bottom: 2px solid #768f56;
   }
   
   th, td {
     text-align: left;
     padding: 16px;
   }
+  

@@ -1,0 +1,24 @@
+<!-- book.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ทีม</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h1>แสดงทีม</h1>
+    <table class="football-table">
+      <tr>
+        <th>ทีม</th>
+      </tr>
+      <tr>
+        <td><%= team.team_name %></td>
+      </tr>
+    </table>
+    <div class="link-center">
+      <a href="/updateteam/<%= team.team_id %>">Edit</a>
+      <a href="/deleteteam/<%= team.team_id %>">Delete</a>
+      <a href="/">Back to List</a>
+    </div>
+  </body>
+</html>

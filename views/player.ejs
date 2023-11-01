@@ -1,0 +1,28 @@
+<!-- book.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>นักกีฬา</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h1>นักกีฬา</h1>
+    <table class="football-table">
+      <tr>
+        <th>ลำดับ</th>
+        <th>นักกีฬา</th>
+        <th>หมายเลขนักกีฬา</th>
+      </tr>
+      <tr>
+        <td><%= player.id %></td>
+        <td><%= player.name %></td>
+        <td><%= player.number %></td>
+      </tr>
+    </table>
+    <div class="link-center">
+      <a href="/update/<%= player.player_id %>">แก้ไข</a>
+      <a href="/delete/<%= player.player_id %>">ลบชื่อนักกีฬา</a>
+      <a href="/players">ย้อนกลับ</a>
+    </div>
+  </body>
+</html>

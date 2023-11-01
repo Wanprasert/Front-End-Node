@@ -1,0 +1,33 @@
+<!-- books.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>รายชื่อทีม</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <h1>รายชื่อทีม</h1>
+  <div class="link-center">
+    <a href="/createteam">เพิ่มทีม</a>
+  </div>
+  <table class="football-table">
+    <tr>
+      <th>ลำดับทีม</th>
+      <th>ชื่อทีม</th>
+      <th>ดำเนินการ</th>
+    </tr>
+    <% for(var i=0; i < teams.length; i++) { %>
+    <tr>
+      <td><%= teams[i].team_id %></td>
+      <td><%= teams[i].team_name %></td>
+      <td>
+        <a href="/team/<%= teams[i].team_id %>">แสดง</a>
+        <a href="/updateteam/<%= teams[i].team_id %>">แก้ไข</a>
+        <a href="/deleteteam/<%= teams[i].team_id %>">ลบ</a>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+  
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- books.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>players</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <h1>รายชื่อนักกีฬา</h1>
+  <div class="link-center">
+    <a href="/create">เพิ่มรายชื่อนักกีฬา</a>
+  </div>
+  <table class="football-table">
+    <tr>
+      <th>ลำดับ</th>
+      <th>ชื่อนักกีฬา</th>
+      <th>หมายเลขนักกีฬา</th>
+      <th>ดำเนินการ</th>
+    </tr>
+    <% for(var i=0; i < players.length; i++) { %>
+    <tr>
+      <td><%= players[i].player_id %></td>
+      <td><%= players[i].name %></td>
+      <td><%= players[i].number %></td>
+      <td>
+        <a href="/player/<%= players[i].player_id %>">แสดง</a>
+        <a href="/update/<%= players[i].player_id %>">แก้ไข</a>
+        <a href="/delete/<%= players[i].player_id %>">ลบ</a>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+  <div class="link-center">
+    <a href="/">กลับ</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!--create.ejs --> 
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>บันทึกข้อมูลการทำประตู</title> 
+        <link rel="stylesheet" href="../css/style.css"/>
+    </head> 
+    
+    <body> 
+        <h1>บันทึกข้อมูลการทำประตู</h1> 
+        <form method="post" action="/createscore"> 
+            <select name="player">
+                <% players.forEach(player => { %>
+                  <option value="<%= player.id %>"><%= player.name %></option>
+                <% }); %>
+              </select>
+            
+            <label for="team_id">ชื่อทีม :</label> 
+            <input type="text" id="team_id" name="team_id"> 
+            <br>
+            <label for="score">การทำประตู :</label> 
+            <input type="text" id="score" name="score"> 
+            <br>
+            <input type="submit" value="createscore"> 
+        </form> 
+        <a href="/">ย้อนกลับ</a> 
+    </body> 
+    </html>
